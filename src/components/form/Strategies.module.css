@@ -1,0 +1,12 @@
+.strategy {
+  border-radius: 2px;
+  border: 1px solid #E3E2E3;
+  background: #FFF;
+  width: 374px;
+  height: 66px;
+}
+
+.strategy:hover {
+  background: #FF4501;
+  cursor: pointer;
+}

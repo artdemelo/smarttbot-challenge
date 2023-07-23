@@ -1,0 +1,16 @@
+.circle {
+  border-radius: 50%;
+  background-color: #FF4501;
+  width: 8.5px;
+  height: 8px;
+}
+
+.active{
+  background-color: #15B8A1;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 7.5px;
+}

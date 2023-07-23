@@ -1,0 +1,17 @@
+.card {
+  display: flex;
+  align-items: center;
+  max-width: 95vw;
+  border-radius: 8px;
+  background: #fff;
+  margin: 12px 2.5vw 12px 2.5vw;
+  filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.1));
+  padding: 16px 25px;
+}
+
+@media screen and (min-width: 1467px) {
+  .card {
+    max-width: 1396px;
+    margin: 12px auto 12px auto;
+  }
+}

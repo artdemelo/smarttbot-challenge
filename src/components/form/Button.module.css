@@ -1,0 +1,24 @@
+.btn {
+  border-radius: 2px;
+}
+
+.btn:hover {
+  background: #ff4501;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btnCreate {
+  background: #00b39d;
+  color: #fff;
+  border: none;
+  width: 90px;
+  height: 29px;
+}
+
+.btnCancel {
+  background: #fff;
+  border: 1px solid #e3e2e3;
+  width: 87px;
+  height: 31px;
+}

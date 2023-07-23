@@ -1,0 +1,16 @@
+.gridContainer {
+  max-width: 95vw;
+  margin: 24px 2.5vw 12px 2.5vw;
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); */
+  grid-template-columns: repeat(auto-fit, 330px);
+  gap: 25px;
+  justify-content: center;
+}
+
+@media screen and (min-width: 1467px) {
+  .gridContainer {
+    max-width: 1396px;
+    margin: 12px auto 12px auto;
+  }
+}

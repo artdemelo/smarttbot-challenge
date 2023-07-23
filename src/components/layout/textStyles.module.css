@@ -1,0 +1,64 @@
+.largeHeavy {
+  color: #5f5d60;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.mediumHeavy {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.heavy {
+  color: #5f5d60;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.smallHeavy {
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.regular {
+  color: #343234;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.regularLight {
+  color: #B1B0B2;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.smallLight {
+  color: #888689;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.smallLighter {
+  color: #b1b0b2;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.mediumLight {
+  color: #888689;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.label{
+  color: #343234;
+}
+
+.gain {
+  color: #00b39d;
+}
+
+.loss {
+  color: #ff4501;
+}
