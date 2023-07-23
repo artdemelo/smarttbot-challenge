@@ -174,6 +174,19 @@ export default function App() {
       last_paper: 1,
     },
 
+    { 
+      title: "Título do Robô",
+      running: 0, 
+      updated_at:"2020-10-29 15:53:45",
+      mode: 0,
+      simulation: "Otimista",
+      strategy: "RenkoBot",
+      initial_capital: 65000,
+      number_trades: 29,
+      daily_balance: 61.75,
+      created_at: "2020-10-29 15:53:45",
+      last_paper: 1,
+    },
   ];
 
   return (
@@ -187,7 +200,7 @@ export default function App() {
       <Card heightValue="252px">
         <Overview />
       </Card>
-      <Card heightValue="118px" onClick={() => {setToggleModal(true);}}>
+      <Card heightValue="118px" onClick={() => {robots.length < 12 ? setToggleModal(true) : alert("Você não possui mais robôs disponíveis.");}}>
         <NewRobot robotQuant={robots.length} />
       </Card>
       <RobotsContainer>

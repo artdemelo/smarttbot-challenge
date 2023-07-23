@@ -3,8 +3,7 @@
 }
 
 .btn:hover {
-  background: #ff4501;
-  color: #fff;
+  filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.3));
   cursor: pointer;
 }
 
@@ -14,6 +13,8 @@
   border: none;
   width: 90px;
   height: 29px;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .btnCancel {
@@ -21,4 +22,7 @@
   border: 1px solid #e3e2e3;
   width: 87px;
   height: 31px;
+  color: #6A6C72;
+  font-size: 14px;
+  font-weight: 400;
 }

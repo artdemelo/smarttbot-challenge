@@ -26,3 +26,29 @@
   padding: 24px 34px;
   gap: 8px;
 }
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 24px 0 34px;
+}
+
+.titleContainer {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  margin: 22px 24px 0 34px; 
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 35px 0 43px 0;
+}
+
+.inputsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
