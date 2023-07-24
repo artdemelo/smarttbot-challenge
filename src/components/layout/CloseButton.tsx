@@ -1,4 +1,6 @@
 import { MouseEventHandler, ReactNode } from "react";
+import styles from "./CloseButton.module.css"
+import close from "../../assets/close.svg"
 
 interface CloseButtonProps {
   visible?: boolean;
@@ -7,11 +9,14 @@ interface CloseButtonProps {
 }
 export default function CloseButton({
   onClick,
-  children,
   visible = true,
 }: CloseButtonProps) {
   if (visible) {
-    return <button onClick={onClick}>{children}</button>;
+    return (
+      <button className={styles.btn} onClick={onClick}>
+        <img src={close} alt="close icon" />
+      </button>
+      );
   }
   return null;
 }

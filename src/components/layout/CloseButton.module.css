@@ -1,0 +1,8 @@
+.btn {
+  background: #fff;
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: none;
+}

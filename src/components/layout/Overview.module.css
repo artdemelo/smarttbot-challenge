@@ -1,0 +1,60 @@
+.overviewContainer {
+  display: flex;
+  flex-direction: column;
+  width: 1346px;
+  gap: 16px;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.paperSections {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  padding-right: 42px;
+}
+
+.papersContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.papers{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  column-gap: 10%;
+  /* gap: 8px; */
+}
+
+.resumeContainer {
+  
+}
+
+.statusWrapper{
+  display: flex;
+  padding: 24px 0 16px 0;
+  justify-content: space-between;
+}
+
+.totalTransactions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+@media screen and (max-width: 700px) {
+  .papers {
+    grid-template-columns: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    gap: 8px;
+  }
+  .paperSections {
+    padding-right: 0;
+  }
+}

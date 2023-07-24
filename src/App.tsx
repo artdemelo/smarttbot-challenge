@@ -189,26 +189,51 @@ export default function App() {
     },
   ];
 
+  const papers = [
+    {
+      name: "WING20",
+      transactions: 331,
+    },
+    {
+        name: "ABEV",
+        transactions: 455,
+    },
+    {
+        name: "PETR4",
+        transactions: 214,
+    },
+    {
+        name: "MGLU3",
+        transactions: 200,
+    },
+    {
+        name: "BBAS3",
+        transactions: 175,
+    },
+    {
+        name: "BEEF3",
+        transactions: 150,
+    }
+  ];
+
   return (
     <>
       <Modal isOpen={toggleModal}>
-      <CloseButton visible={toggleModal} onClick={() => {setToggleModal(false);}}>X</CloseButton>
+        <CloseButton visible={toggleModal} onClick={() => {setToggleModal(false);}}/>
       </Modal>
-      <Card heightValue="65px">
-        <Breadcrumb />
-      </Card>
-      <Card heightValue="252px">
-        <Overview />
-      </Card>
-      <Card heightValue="118px" onClick={() => {robots.length < 12 ? setToggleModal(true) : alert("Você não possui mais robôs disponíveis.");}}>
-        <NewRobot robotQuant={robots.length} />
-      </Card>
-      <RobotsContainer>
-        {robots.length > 0 &&
-          robots.map((robot) => (
-            <Robot robotValues={robot} />
-          ))}
-      </RobotsContainer>
+          <div className="wrapper">
+            <Breadcrumb />
+            <Overview papers={papers} />
+            <Card heightValue="118px" onClick={() => {robots.length < 12 ? setToggleModal(true) : alert("Você não possui mais robôs disponíveis.");}}>
+              <NewRobot robotQuant={robots.length} />
+            </Card>
+            <RobotsContainer>
+              {robots.length > 0 &&
+                robots.map((robot) => (
+                  <Robot robotValues={robot} />
+                ))}
+            </RobotsContainer>
+        </div>
     </>
   );
 }

@@ -1,0 +1,45 @@
+.tag {
+  background-color: #00B39D;
+  border-radius: 2px;
+  color: #fff;
+  height: 19px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  padding: 2.5px;
+}
+.container {
+  display: flex;
+  align-items: center;
+  width: 38vw;
+}
+
+.dashedLine {
+  margin: 0px 8.5px 0px 8.5px;
+  border: 1px solid #C5C5C5;
+  height: 1px;
+  border-style: dashed;
+  width: 100%;
+}
+
+.text {
+  display: flex;
+  white-space: nowrap;
+  padding-right: 16px;
+}
+
+
+@media screen and (max-width: 700px) {
+  .container {
+    width: 74vw;
+  }
+
+}
+
+@media screen and (min-width: 1467px) {
+  .container {
+  display: flex;
+  align-items: center;
+  width: 600px;
+}
+}

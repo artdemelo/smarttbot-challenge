@@ -1,0 +1,15 @@
+.wrapper {
+  margin: 24px 2.5vw 12px 2.5vw;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+
+@media screen and (min-width: 1467px) {
+  .wrapper {
+    max-width: 1396px;
+    margin: 12px auto 12px auto;
+  }
+}

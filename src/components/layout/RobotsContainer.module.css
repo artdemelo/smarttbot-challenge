@@ -1,10 +1,10 @@
 .gridContainer {
   max-width: 95vw;
-  margin: 24px 2.5vw 12px 2.5vw;
+  margin: 24px 0 12px 0;
   display: grid;
   /* grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); */
   grid-template-columns: repeat(auto-fit, 330px);
-  gap: 25px;
+  gap: 16px 25px;
   justify-content: center;
 }
 

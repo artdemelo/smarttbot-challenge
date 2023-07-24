@@ -21,6 +21,12 @@
   font-weight: 700;
 }
 
+.smallHeavyDark {
+  color: #343234;
+  font-size: 12px;
+  font-weight: 700;
+}
+
 .regular {
   color: #343234;
   font-size: 16px;
@@ -39,8 +45,20 @@
   font-weight: 400;
 }
 
+.smallLightDark {
+  color: #343234;
+  font-size: 12px;
+  font-weight: 400;
+}
+
 .smallLighter {
   color: #b1b0b2;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.smallLighterVariation {
+  color: #888689;
   font-size: 12px;
   font-weight: 400;
 }
@@ -61,4 +79,8 @@
 
 .loss {
   color: #ff4501;
+}
+
+.paper {
+  color: #959AA2;
 }
