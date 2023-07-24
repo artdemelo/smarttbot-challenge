@@ -5,6 +5,13 @@
 }
 
 .mediumHeavy {
+  color: #343234;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.mediumHeavyGray {
+  color: #5F5D60;
   font-size: 20px;
   font-weight: 700;
 }
@@ -37,6 +44,12 @@
   color: #B1B0B2;
   font-size: 16px;
   font-weight: 400;
+}
+
+.regularMinor {
+  color: #343234;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .smallLight {

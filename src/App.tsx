@@ -12,180 +12,360 @@ import NewRobot from "./components/layout/NewRobot.tsx";
 export default function App() {
   const [toggleModal, setToggleModal] = useState(false);
 
-  // const robotPapers = [
-  //   {
-  //     robot_id: 1,
-  //     paper: "WINBG20",
-  //     position: 5,
-  //     type: 0,
-  //     paper_value: 45.55,
-  //     profit: "RAIL3",
-  //     created_at: "2020-10-29 15:53:45"      
-  //   },
-  //   {
-  //     robot_id: 2,
-  //     paper: "ABEV3",
-  //     position: 5,
-  //     type: 0,
-  //     paper_value: 45.55,
-  //     profit: "RAIL3",
-  //     created_at: "2020-10-29 15:53:45"      
-  //   },
-  //   {
-  //     robot_id: 3,
-  //     paper: "BOVA11",
-  //     position: 5,
-  //     type: 0,
-  //     paper_value: 45.55,
-  //     profit: "RAIL3",
-  //     created_at: "2020-10-29 15:53:45"      
-  //   },
-  // ];
 
   const robots = [
     { 
-      title: "Título do Robô",
+      id: 12847197,
+      title: "Orci In Consequat Consulting",
       running: 0, 
       updated_at:"2020-10-29 15:53:45",
       mode: 0,
-      simulation: "Otimista",
+      simulation: 0,
+      stock_codes: "WING20",
       strategy: "RenkoBot",
       initial_capital: 65000,
       number_trades: 29,
       daily_balance: 61.75,
       created_at: "2020-10-29 15:53:45",
-      last_paper: 1,
+      last_paper: {
+        robot_id: 1648753,
+        paper: "WINBG20",
+        position: 17,
+        type: 1,
+        paper_value: 84208.15,
+        profit: -5.75,
+        created_at: "2020-08-28 13:40:52",
+        id: 113001,
+        robot: {
+            title: "Eu Metus LLC"
+        }
+      },
+      movimentations: [],
     },
     { 
-      title: "Título do Robô",
+      id: 12847197,
+      title: "Facilisis Eget Ipsum LLP",
       running: 0, 
       updated_at:"2020-10-29 15:53:45",
       mode: 0,
-      simulation: "Otimista",
+      simulation: 0,
+      stock_codes: "WING20",
       strategy: "RenkoBot",
       initial_capital: 65000,
       number_trades: 29,
       daily_balance: 61.75,
       created_at: "2020-10-29 15:53:45",
-      last_paper: 1,
+      last_paper: {
+        robot_id: 1648753,
+        paper: "WINBG20",
+        position: 17,
+        type: 1,
+        paper_value: 84208.15,
+        profit: -5.75,
+        created_at: "2020-08-28 13:40:52",
+        id: 113001,
+        robot: {
+            title: "Eu Metus LLC"
+        }
+      },
+      movimentations: [],
     },
     { 
-      title: "Título do Robô",
+      id: 12847197,
+      title: "Eu Metus LLC",
       running: 0, 
       updated_at:"2020-10-29 15:53:45",
       mode: 0,
-      simulation: "Otimista",
+      simulation: 0,
+      stock_codes: "PETR4",
       strategy: "RenkoBot",
       initial_capital: 65000,
       number_trades: 29,
       daily_balance: 61.75,
       created_at: "2020-10-29 15:53:45",
-      last_paper: 1,
+      last_paper: {
+        robot_id: 1648753,
+        paper: "WINBG20",
+        position: 17,
+        type: 0,
+        paper_value: 84208.15,
+        profit: 5.75,
+        created_at: "2020-08-28 13:40:52",
+        id: 113001,
+        robot: {
+            title: "Eu Metus LLC"
+        }
+      },
+      movimentations: [],
     },
     { 
-      title: "Título do Robô",
+      id: 12847197,
+      title: "Sorendo do Robô",
       running: 0, 
       updated_at:"2020-10-29 15:53:45",
       mode: 0,
-      simulation: "Otimista",
-      strategy: "RenkoBot",
+      simulation: 0,
+      stock_codes: "ABEV",
+      strategy: "Tamgram",
+      initial_capital: 65000,
+      number_trades: 102,
+      daily_balance: 61.75,
+      created_at: "2020-10-29 15:53:45",
+      last_paper: {
+        robot_id: 1648753,
+        paper: "WINBG20",
+        position: 17,
+        type: 1,
+        paper_value: 84208.15,
+        profit: -5.75,
+        created_at: "2020-08-28 13:40:52",
+        id: 113001,
+        robot: {
+            title: "Eu Metus LLC"
+        }
+      },
+      movimentations: [],
+    },
+    { 
+      id: 12847197,
+      title: "Azul Robô",
+      running: 0, 
+      updated_at:"2020-10-29 15:53:45",
+      mode: 0,
+      simulation: 1,
+      stock_codes: "BBAS3",
+      strategy: "Price action",
+      initial_capital: 65000,
+      number_trades: 45,
+      daily_balance: 61.75,
+      created_at: "2020-10-29 15:53:45",
+      last_paper: {
+        robot_id: 1648753,
+        paper: "WINBG20",
+        position: 17,
+        type: 1,
+        paper_value: 84208.15,
+        profit: 5.75,
+        created_at: "2020-08-28 13:40:52",
+        id: 113001,
+        robot: {
+            title: "Eu Metus LLC"
+        }
+      },
+      movimentations: [],
+    },
+    { 
+      id: 12847197,
+      title: "Optimus Prime ft. Bumblebee",
+      running: 0, 
+      updated_at:"2020-10-29 15:53:45",
+      mode: 0,
+      simulation: 0,
+      stock_codes: "WING20",
+      strategy: "Raptor",
       initial_capital: 65000,
       number_trades: 29,
       daily_balance: 61.75,
       created_at: "2020-10-29 15:53:45",
-      last_paper: 1,
+      last_paper: {
+        robot_id: 1648753,
+        paper: "WINBG20",
+        position: 17,
+        type: 0,
+        paper_value: 84208.15,
+        profit: 5.75,
+        created_at: "2020-08-28 13:40:52",
+        id: 113001,
+        robot: {
+            title: "Eu Metus LLC"
+        }
+      },
+      movimentations: [],
     },
     { 
-      title: "Título do Robô",
-      running: 0, 
-      updated_at:"2020-10-29 15:53:45",
-      mode: 0,
-      simulation: "Otimista",
-      strategy: "RenkoBot",
-      initial_capital: 65000,
-      number_trades: 29,
-      daily_balance: 61.75,
-      created_at: "2020-10-29 15:53:45",
-      last_paper: 1,
-    },
-    { 
-      title: "Título do Robô",
+      id: 12847197,
+      title: "Optimus Prime ft. Bumblebee",
       running: 1, 
       updated_at:"2020-10-29 15:53:45",
       mode: 0,
-      simulation: "Otimista",
+      simulation: 1,
+      stock_codes: "BBAS3",
       strategy: "RenkoBot",
       initial_capital: 65000,
       number_trades: 29,
-      daily_balance: 61.75,
+      daily_balance: -61.75,
       created_at: "2020-10-29 15:53:45",
-      last_paper: 1,
+      last_paper: {
+        robot_id: 1648753,
+        paper: "WINBG20",
+        position: 17,
+        type: 1,
+        paper_value: 84208.15,
+        profit: -5.75,
+        created_at: "2020-08-28 13:40:52",
+        id: 113001,
+        robot: {
+            title: "Eu Metus LLC"
+        }
+      },
+      movimentations: [],
     },
     { 
-      title: "Título do Robô",
+      id: 12847197,
+      title: "Optimus Prime ft. Bumblebee",
       running: 0, 
       updated_at:"2020-10-29 15:53:45",
       mode: 0,
-      simulation: "Otimista",
+      simulation: 1,
+      stock_codes: "MGLU3",
       strategy: "RenkoBot",
       initial_capital: 65000,
       number_trades: 29,
       daily_balance: 61.75,
       created_at: "2020-10-29 15:53:45",
-      last_paper: 1,
+      last_paper: {
+        robot_id: 1648753,
+        paper: "WINBG20",
+        position: 17,
+        type: 1,
+        paper_value: 84208.15,
+        profit: 5.75,
+        created_at: "2020-08-28 13:40:52",
+        id: 113001,
+        robot: {
+            title: "Eu Metus LLC"
+        }
+      },
+      movimentations: [],
     },
     { 
-      title: "Título do Robô",
+      id: 12847197,
+      title: "Optimus Prime ft. Bumblebee",
       running: 1, 
       updated_at:"2020-10-29 15:53:45",
       mode: 0,
-      simulation: "Otimista",
+      simulation: 0,
+      stock_codes: "WING20",
       strategy: "RenkoBot",
       initial_capital: 65000,
       number_trades: 29,
       daily_balance: 61.75,
       created_at: "2020-10-29 15:53:45",
-      last_paper: 1,
+      last_paper: {
+        robot_id: 1648753,
+        paper: "WINBG20",
+        position: 17,
+        type: 1,
+        paper_value: 84208.15,
+        profit: 5.75,
+        created_at: "2020-08-28 13:40:52",
+        id: 113001,
+        robot: {
+            title: "Eu Metus LLC"
+        }
+      },
+      movimentations: [],
     },
     { 
-      title: "Título do Robô",
+      id: 12847197,
+      title: "Optimus Prime ft. Bumblebee",
       running: 0, 
       updated_at:"2020-10-29 15:53:45",
       mode: 0,
-      simulation: "Otimista",
+      simulation: 0,
+      stock_codes: "PETR4",
       strategy: "RenkoBot",
       initial_capital: 65000,
       number_trades: 29,
       daily_balance: 61.75,
       created_at: "2020-10-29 15:53:45",
-      last_paper: 1,
+      last_paper: {
+        robot_id: 1648753,
+        paper: "WINBG20",
+        position: 17,
+        type: 1,
+        paper_value: 84208.15,
+        profit: 5.75,
+        created_at: "2020-08-28 13:40:52",
+        id: 113001,
+        robot: {
+            title: "Eu Metus LLC"
+        }
+      },
+      movimentations: [],
     },
     { 
-      title: "Título do Robô",
-      running: 0, 
+      id: 12847197,
+      title: "Optimus Prime ft. Bumblebee",
+      running: 1, 
       updated_at:"2020-10-29 15:53:45",
       mode: 0,
-      simulation: "Otimista",
+      simulation: 0,
+      stock_codes: "WING20",
       strategy: "RenkoBot",
       initial_capital: 65000,
       number_trades: 29,
       daily_balance: 61.75,
       created_at: "2020-10-29 15:53:45",
-      last_paper: 1,
+      last_paper: {
+        robot_id: 1648753,
+        paper: "WINBG20",
+        position: 17,
+        type: 1,
+        paper_value: 84208.15,
+        profit: 5.75,
+        created_at: "2020-08-28 13:40:52",
+        id: 113001,
+        robot: {
+            title: "Eu Metus LLC"
+        }
+      },
+      movimentations: [],
     },
 
     { 
-      title: "Título do Robô",
+      id: 12847197,
+      title: "Optimus Prime ft. Bumblebee",
       running: 0, 
       updated_at:"2020-10-29 15:53:45",
       mode: 0,
-      simulation: "Otimista",
+      simulation: 0,
+      stock_codes: "BEEF3",
       strategy: "RenkoBot",
       initial_capital: 65000,
       number_trades: 29,
       daily_balance: 61.75,
       created_at: "2020-10-29 15:53:45",
-      last_paper: 1,
+      last_paper: {
+        robot_id: 1648753,
+        paper: "WINBG20",
+        position: 17,
+        type: 1,
+        paper_value: 84208.15,
+        profit: 5.75,
+        created_at: "2020-08-28 13:40:52",
+        id: 113001,
+        robot: {
+            title: "Eu Metus LLC"
+        }
+      },
+      movimentations: [{
+        date: "2023-07-24 13:40:52",
+        value: 55.32
+      },
+      {
+        date: "2023-07-24 13:40:52",
+        value: 55.32
+      },
+      {
+        date: "2023-07-24 13:40:52",
+        value: 55.32
+      },
+      {
+        date: "2023-07-24 13:40:52",
+        value: 55.32
+      },
+    ],
     },
   ];
 
@@ -216,6 +396,55 @@ export default function App() {
     }
   ];
 
+  const robotPapers = [
+    {
+        robot_id: 12847197,
+        paper: "WINBG20",
+        position: 95,
+        type: 0,
+        paper_value: 59220.52,
+        profit: -28.93,
+        created_at: "2020-09-15 22:18:39",
+        id: 167501,
+        robot: {
+            title: "Consectetuer Cursus Et PC"
+        }
+    },
+    {
+      robot_id: 12847197,
+      paper: "WINBG20",
+      position: 95,
+      type: 0,
+      paper_value: 59220.52,
+      profit: -28.93,
+      created_at: "2020-09-15 22:18:39",
+      id: 167501,
+      robot: {
+          title: "Consectetuer Cursus Et PC"
+      }
+  },
+  {
+    robot_id: 12847197,
+    paper: "WINBG20",
+    position: 95,
+    type: 0,
+    paper_value: 59220.52,
+    profit: 28.93,
+    created_at: "2020-09-15 22:18:39",
+    id: 167501,
+    robot: {
+        title: "Consectetuer Cursus Et PC"
+    }
+},
+  ];
+
+  let overallProfit:number = 0;
+
+  robotPapers.forEach((robotPaper)=>{
+    overallProfit += robotPaper.profit;
+  })
+
+  console.log(overallProfit);
   return (
     <>
       <Modal isOpen={toggleModal}>
@@ -223,7 +452,7 @@ export default function App() {
       </Modal>
           <div className="wrapper">
             <Breadcrumb />
-            <Overview papers={papers} />
+            <Overview overallProfit={overallProfit} papers={papers} />
             <Card heightValue="118px" onClick={() => {robots.length < 12 ? setToggleModal(true) : alert("Você não possui mais robôs disponíveis.");}}>
               <NewRobot robotQuant={robots.length} />
             </Card>

@@ -11,9 +11,10 @@ interface PaperSchema {
 
 interface OverviewProps {
   papers: Array<PaperSchema>,
+  overallProfit: number,
 }
 
-export default function Overview({papers}: OverviewProps) {
+export default function Overview({papers, overallProfit}: OverviewProps) {
   let totalTransactions = 0;
 
   papers.forEach ((paper)=>{
@@ -28,7 +29,7 @@ export default function Overview({papers}: OverviewProps) {
             <div className={styles.statusWrapper}>
               <div className={styles.resumeContainer}>
                 <p className={textStyles.smallLight}>Resumo de movimentação</p>
-                <p className={textStyles.mediumHeavy+" "+textStyles.loss}>-R$220,00</p>
+                <p className={textStyles.mediumHeavy+" "+(overallProfit<0?textStyles.loss : textStyles.gain)}>{overallProfit < 0 ? "-":undefined}R${overallProfit < 0 ? (overallProfit*-1).toFixed(2).replace(".",",") : overallProfit.toFixed(2).replace(".",",")}</p>
               </div>
               <div className={styles.totalTransactions}>
                 <p className={textStyles.smallLight}>Total de transações realizadas</p>

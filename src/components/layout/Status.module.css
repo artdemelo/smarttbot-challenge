@@ -13,4 +13,5 @@
   display: flex;
   align-items: center;
   gap: 7.5px;
+  width: 100px;
 }

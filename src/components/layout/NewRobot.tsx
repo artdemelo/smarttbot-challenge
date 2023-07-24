@@ -12,7 +12,7 @@ export default function NewRobot({robotQuant}: NewRobotProps) {
     <img src={smarttBot} alt="smarttbot icon" />
         <div style={{margin: "25px"}}>
           <span className={textStyles.regular}>Adicionar novo Robô</span>
-          <p className={textStyles.smallLighter}>Você possui <span className={textStyles.smallLighter+" "+textStyles.gain}>{remaining}{remaining === 1 ? " Robô" : " Robôs"}</span> {remaining === 1 ? " disponível" : " disponíveis"}</p>
+          <p className={textStyles.smallLighter}>Você possui <span className={textStyles.smallLighter+" "+(remaining===0 ? textStyles.loss : textStyles.gain)}>{remaining}{remaining === 1 ? " Robô" : " Robôs"}</span> {remaining === 1 ? " disponível" : " disponíveis"}</p>
         </div>
     </>
   )
