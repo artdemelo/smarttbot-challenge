@@ -7,24 +7,12 @@ import gain from "../assets/gain.svg";
 import loss from "../assets/loss.svg";
 import arrow from "../assets/arrow.svg";
 
-interface lastPaperSchema {
-  robot_id: number,
-  paper: string,
-  position: number,
-  type: number,
-  paper_value: number,
-  profit: number,
-  created_at: string,
-  id: number,
-  robot: object,
-}
-
 interface movimentationSchema {
   date: string,
   value: number,
 }
 
-interface RobotSchema {
+type Robot = {
       id: number,
       title: string,
       running: number, 
@@ -37,20 +25,31 @@ interface RobotSchema {
       number_trades: number,
       daily_balance: number,
       created_at: string,
-      last_paper: lastPaperSchema,
+      last_paper: {
+        created_at: string,
+        id: number,
+        paper: string,
+        paper_value: number,
+        position: number,
+        profit: number,
+        robot: object,
+        robot_id: number,
+        type: number,
+      },
       movimentations: Array<movimentationSchema>,
 }
 
 
 
 interface RobotProps {
-  robotValues: RobotSchema;
+  robotValues: Robot;
 }
 
-export default function Robot({ robotValues }: RobotProps) {
+export default function Robot({ robotValues,}: RobotProps) {
+
   const now = new Date();
   const date = now.toISOString().slice(0,10);
-
+  const last_paper: any = robotValues.last_paper;
   let tradesToday : number = 0;
 
   robotValues.movimentations.forEach((movimentation)=>{
@@ -60,7 +59,7 @@ export default function Robot({ robotValues }: RobotProps) {
   });
   return (
     <div className={styles.robot}>
-        <Card heightValue="100%">
+        <Card heightValue="100%" onClick={()=>undefined}>
           <div className={styles.robotsContainer}>
           <div className={styles.titleStatusContainer}>
             <p className={robotValues.title.length < 22 ? textStyles.regular : textStyles.regularMinor}>{robotValues.title}</p>
@@ -73,16 +72,18 @@ export default function Robot({ robotValues }: RobotProps) {
                 <div className={styles.tag+" "+textStyles.smallLighter}>{robotValues.strategy}</div>
               </div>
               <div className={styles.overallContainer}>
-                <p className={textStyles.largeHeavy}>{robotValues.last_paper.position}</p>
-                <div className={styles.paperContainer}>
-                  <p className={textStyles.heavy+" "+textStyles.paper}>{robotValues.last_paper.paper}</p>
-                  <p className={textStyles.smallLightDark}>{robotValues.last_paper.type === 0 ? "Compra":"Venda"}</p>
+                <div className={styles.overallLeftWrapper}>
+                <p className={textStyles.largeHeavy}>{last_paper ? last_paper.position : "0"}</p>
+                  <div className={styles.paperContainer}>
+                    <p className={textStyles.heavy+" "+textStyles.paper}>{last_paper ? last_paper.paper : "NONE"}</p>
+                    <p className={textStyles.smallLightDark}>{last_paper ? (last_paper.type === 0 ? "Compra":"Venda"):"Nenhum"}</p>
+                  </div>
                 </div>
                 <div className={styles.balanceContainer}>
-                  <p className={textStyles.smallLighter}>{robotValues.last_paper.paper_value}</p>
+                  <p className={textStyles.smallLighter}>{last_paper ? last_paper.paper_value : "0,00"}</p>
                   <div className={styles.statusContainer}>
-                    <img src={robotValues.last_paper.profit >= 0 ? gain : loss} alt="triangle icon" />
-                    <p className={textStyles.mediumLight+" "+ (robotValues.last_paper.profit >=0 ? textStyles.gain : textStyles.loss)}>{robotValues.last_paper.profit <=0 ? "-":undefined}R${robotValues.last_paper.profit >=0 ? robotValues.last_paper.profit.toString().replace(".",",") : (robotValues.last_paper.profit*(-1)).toString().replace(".",",")}</p>
+                    <img src={last_paper ? (last_paper.profit >= 0 ? gain : loss) : gain} alt="triangle icon" />
+                    <p className={textStyles.mediumLight+" "+ (last_paper ? (last_paper.profit >=0 ? textStyles.gain : textStyles.loss) : textStyles.gain)}>{last_paper ? (last_paper.profit < 0 ? "-":undefined):undefined}R${last_paper ? (last_paper.profit >=0 ? last_paper.profit.toString().replace(".",",") : (last_paper.profit*(-1)).toString().replace(".",",")):"0,00"}</p>
                   </div>
                 </div>
               </div>
@@ -92,7 +93,7 @@ export default function Robot({ robotValues }: RobotProps) {
                     <p className={textStyles.smallLighterVariation}>Saldo diário</p>
                     <img src={arrow} alt="arrow icon" />
                   </div>
-                  <p className={textStyles.mediumHeavy+" "+textStyles.loss}>-R${robotValues.daily_balance.toString().replace(".",",")}</p>
+                  <p className={textStyles.mediumHeavy+" "+(robotValues.daily_balance < 0 ? textStyles.loss : textStyles.gain)}>{robotValues.daily_balance < 0 ? "-":undefined}R${robotValues.daily_balance >= 0 ? robotValues.daily_balance.toString().replace(".",",") : (robotValues.daily_balance*(-1)).toString().replace(".",",")}</p>
                 </div>
 
                 <div className={styles.dayTradesContainer}>

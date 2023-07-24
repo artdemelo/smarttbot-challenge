@@ -7,20 +7,22 @@ import Card from "./layout/Card";
 
 interface PaperSchema {
   name: string,
-  transactions: number,
+  trasactions: number,
+}
+
+type Overview = {
+    moviment_summary: number,
+    transactions: number,
+    open_positions: number,
+    papers: Array<PaperSchema>
 }
 
 interface OverviewProps {
-  papers: Array<PaperSchema>,
-  overallProfit: number,
+  overview: Overview
 }
 
-export default function Overview({papers, overallProfit}: OverviewProps) {
-  let totalTransactions = 0;
-
-  papers.forEach ((paper)=>{
-    totalTransactions+=paper.transactions;
-  })
+export default function Overview({overview}: OverviewProps) {
+  console.log("dentro",overview.papers);
   return (
     <>
       <Card heightValue="252px">
@@ -30,11 +32,11 @@ export default function Overview({papers, overallProfit}: OverviewProps) {
             <div className={styles.statusWrapper}>
               <div className={styles.resumeContainer}>
                 <p className={textStyles.smallLight}>Resumo de movimentação</p>
-                <p className={textStyles.mediumHeavy+" "+(overallProfit<0?textStyles.loss : textStyles.gain)}>{overallProfit < 0 ? "-":undefined}R${overallProfit < 0 ? (overallProfit*-1).toFixed(2).replace(".",",") : overallProfit.toFixed(2).replace(".",",")}</p>
+                <p className={textStyles.mediumHeavy+" "+(overview.moviment_summary<0?textStyles.loss : textStyles.gain)}>{overview.moviment_summary < 0 ? "-":undefined}R${overview.moviment_summary ? (overview.moviment_summary < 0 ? (overview.moviment_summary*(-1)).toFixed(2).replace(".",",") : overview.moviment_summary.toFixed(2).replace(".",",")) : "0"}</p>
               </div>
               <div className={styles.totalTransactions}>
                 <p className={textStyles.smallLight}>Total de transações realizadas</p>
-                <p className={textStyles.mediumHeavy}>{totalTransactions}</p>
+                <p className={textStyles.mediumHeavy}>{overview.transactions}</p>
               </div>
             </div>
             <HorizontalLine />
@@ -43,10 +45,10 @@ export default function Overview({papers, overallProfit}: OverviewProps) {
               <p className={textStyles.smallLighter}>Papéis negociados</p>
               <div className={styles.paperSections}>
                 <div className={styles.papers}>
-                  {papers.length > 0 &&
-                  papers.map((paper) => (
-                    <Paper name={paper.name} transactions={paper.transactions}/>
-                  ))}
+                  {overview.papers ? (overview.papers.length > 0 &&
+                  overview.papers.map((paper) => (
+                    <Paper name={paper.name} transactions={paper.trasactions}/>
+                  ))):<p>paper</p>}
                 </div>
               </div>
             </div>
