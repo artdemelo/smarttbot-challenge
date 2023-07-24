@@ -1,6 +1,8 @@
 import { MouseEventHandler, ReactNode } from "react";
-import styles from "./CloseButton.module.css"
-import close from "../../assets/close.svg"
+
+import styles from "./CloseButton.module.css";
+
+import close from "../../assets/close.svg";
 
 interface CloseButtonProps {
   visible?: boolean;

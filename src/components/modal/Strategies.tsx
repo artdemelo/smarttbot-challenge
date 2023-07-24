@@ -1,6 +1,7 @@
 import { useState } from "react";
+
 import styles from "./Strategies.module.css";
-import textStyles from "../layout/textStyles.module.css"
+import textStyles from "../layout/textStyles.module.css";
 
 interface StrategySchema {
   id: number,

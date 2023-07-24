@@ -1,5 +1,5 @@
 import styles from "./Status.module.css"
-import textStyles from "./textStyles.module.css"
+import textStyles from "../layout/textStyles.module.css"
 
 
 interface StatusProps {

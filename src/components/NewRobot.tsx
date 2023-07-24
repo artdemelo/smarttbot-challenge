@@ -1,5 +1,5 @@
-import smarttBot from "../../assets/smarttbot.svg"
-import textStyles from "./textStyles.module.css"
+import smarttBot from "../assets/smarttbot.svg"
+import textStyles from "./layout/textStyles.module.css"
 
 interface NewRobotProps {
   robotQuant: number,

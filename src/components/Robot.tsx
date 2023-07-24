@@ -1,6 +1,7 @@
 import styles from "./Robot.module.css";
 import textStyles from "./layout/textStyles.module.css"
-import Status from "./layout/Status";
+
+import Status from "./robot/Status";
 import Card from "./layout/Card";
 import gain from "../assets/gain.svg";
 import loss from "../assets/loss.svg";

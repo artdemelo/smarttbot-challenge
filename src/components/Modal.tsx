@@ -1,9 +1,11 @@
 import { ReactNode } from "react";
+
 import styles from "./Modal.module.css";
-import textStyles from "./textStyles.module.css";
-import Input from "../form/Input";
-import Button from "../form/Button";
-import Strategies from "../form/Strategies";
+import textStyles from "./layout/textStyles.module.css";
+
+import Input from "./modal/Input";
+import Button from "./modal/Button";
+import Strategies from "./modal/Strategies";
 
 interface ModalProps {
   isOpen: boolean;

@@ -1,15 +1,10 @@
-
-import styles from "./Paper.module.css"
-import textStyles from "./textStyles.module.css"
-
-
+import styles from "./Paper.module.css";
+import textStyles from "../layout/textStyles.module.css";
 
 interface PaperProps {
   name: string,
   transactions: number,
 }
-
-
 
 export default function Paper({name, transactions}: PaperProps) {
   return (

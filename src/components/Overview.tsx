@@ -1,8 +1,9 @@
-import HorizontalLine from "./HorizontalLine";
-import Paper from "./Paper";
-import textStyles from "./textStyles.module.css"
-import styles from "./Overview.module.css"
-import Card from "./Card";
+import styles from "./Overview.module.css";
+import textStyles from "./layout/textStyles.module.css";
+
+import HorizontalLine from "./overview/HorizontalLine";
+import Paper from "./overview/Paper";
+import Card from "./layout/Card";
 
 interface PaperSchema {
   name: string,

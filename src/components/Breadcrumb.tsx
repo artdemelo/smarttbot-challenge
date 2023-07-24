@@ -1,8 +1,10 @@
 import style from "./Breadcrumb.module.css"
-import VerticalLine from "./VerticalLine";
-import bars from "../../assets/bars.svg";
-import textStyles from "./textStyles.module.css";
-import Card from "./Card";
+import textStyles from "./layout/textStyles.module.css";
+
+import VerticalLine from "./breadcrumb/VerticalLine";
+import Card from "./layout/Card";
+
+import bars from "../assets/bars.svg";
 
 export default function Overview() {
   return (

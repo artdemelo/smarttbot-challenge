@@ -1,13 +1,15 @@
-import "./App.css";
 import { useState } from "react";
+
+import "./App.css";
+
 import Robot from "./components/Robot.tsx";
 import Card from "./components/layout/Card.tsx";
-import Modal from "./components/layout/Modal.tsx";
-import RobotsContainer from "./components/layout/RobotsContainer.tsx";
-import CloseButton from "./components/layout/CloseButton.tsx";
-import Breadcrumb from "./components/layout/Breadcrumb.tsx";
-import Overview from "./components/layout/Overview.tsx";
-import NewRobot from "./components/layout/NewRobot.tsx";
+import Modal from "./components/Modal.tsx";
+import RobotsContainer from "./components/robot/RobotsContainer.tsx";
+import CloseButton from "./components/modal/CloseButton.tsx";
+import Breadcrumb from "./components/Breadcrumb.tsx";
+import Overview from "./components/Overview.tsx";
+import NewRobot from "./components/NewRobot.tsx";
 
 export default function App() {
   const [toggleModal, setToggleModal] = useState(false);
@@ -246,34 +248,6 @@ export default function App() {
       mode: 0,
       simulation: 0,
       stock_codes: "WING20",
-      strategy: "RenkoBot",
-      initial_capital: 65000,
-      number_trades: 29,
-      daily_balance: 61.75,
-      created_at: "2020-10-29 15:53:45",
-      last_paper: {
-        robot_id: 1648753,
-        paper: "WINBG20",
-        position: 17,
-        type: 1,
-        paper_value: 84208.15,
-        profit: 5.75,
-        created_at: "2020-08-28 13:40:52",
-        id: 113001,
-        robot: {
-            title: "Eu Metus LLC"
-        }
-      },
-      movimentations: [],
-    },
-    { 
-      id: 12847197,
-      title: "Optimus Prime ft. Bumblebee",
-      running: 0, 
-      updated_at:"2020-10-29 15:53:45",
-      mode: 0,
-      simulation: 0,
-      stock_codes: "PETR4",
       strategy: "RenkoBot",
       initial_capital: 65000,
       number_trades: 29,
