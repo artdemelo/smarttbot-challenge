@@ -97,3 +97,12 @@
 .paper {
   color: #959AA2;
 }
+
+@media screen and (max-width: 470px) {
+  .largeHeavy {
+    font-size: 24px;
+  }
+  .regular{
+    font-size: 12px;
+  }
+}

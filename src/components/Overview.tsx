@@ -22,7 +22,6 @@ interface OverviewProps {
 }
 
 export default function Overview({overview}: OverviewProps) {
-  console.log("dentro",overview.papers);
   return (
     <>
       <Card heightValue="252px">

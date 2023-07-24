@@ -48,7 +48,6 @@ export default function App() {
       const response = await axios.get(url+"/robot/overview", {headers:{Accept: "application/json"}});
       const data = response.data.data;
         setOverviewValue(data);
-        console.log("oi",data);
       }
       catch(error) {
         console.log(error);

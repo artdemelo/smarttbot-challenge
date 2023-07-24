@@ -52,3 +52,13 @@
   flex-direction: column;
   gap: 8px;
 }
+
+@media screen and (max-width: 470px) {
+  .modal {
+    width: 100vw;
+    height: 100vh;
+  }
+  .buttonsContainer {
+    margin-up: 45px;
+  }
+}

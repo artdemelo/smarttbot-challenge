@@ -7,7 +7,6 @@ interface PaperProps {
 }
 
 export default function Paper({name, transactions}: PaperProps) {
-  console.log("transactions", transactions);
   return (
     <div className={styles.container}>
       <div className={styles.tag+" "+textStyles.smallHeavy}>{name}</div>

@@ -17,3 +17,10 @@
 .input:focus {
     outline: 1px solid #FF4501;
 }
+
+
+@media screen and (max-width: 470px) {
+  .input {
+    width: 80vw;
+  }
+}
