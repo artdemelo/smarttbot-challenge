@@ -59,17 +59,10 @@ export default function App() {
   
       };
 
-    const getRobotDataToPost = (data) =>{
-      setPostValue(data);
-    }
-  
-  
   useEffect(()=>{  
     getRobots();
     getOverview();
   },[]);
-
-
 
   return (
     <>

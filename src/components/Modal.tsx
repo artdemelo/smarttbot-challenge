@@ -1,4 +1,4 @@
-import { MouseEventHandler, ReactNode, useState } from "react";
+import { MouseEventHandler, ReactNode, useEffect, useState } from "react";
 
 import axios from "axios";
 import styles from "./Modal.module.css";
@@ -21,66 +21,39 @@ export default function Modal({ isOpen, children, closeModal, postRobot}: ModalP
   const [title, setTitle] = useState("");
   const [capital, setCapital] = useState(0);
   const [strategy, setStrategy] = useState(0);
+  const [strategiesList, setStrategiesList] = useState([]);
   
-  let robot = {
-    title: title, //buscar da caixa de texto titulo
-    mode: 0, //manter em 0
-    strategy_id: strategy, //buscar o id da estratégia selecionada
-    initial_capital: capital, //buscar da caixa de texto de capital
-    simulation: 0, //manter 0
-    broker_id: 1 //manter 1
+  const robot = {
+    title: title,
+    mode: 0, 
+    strategy_id: strategy,
+    initial_capital: capital,
+    simulation: 0, 
+    broker_id: 1 
   }
-  // const postRobot = async()=>{
-  //   const url ="https://api.k8s.smarttbot.com/api-front-test/api/v1/";
 
-  //   try {
-  //     const response = await axios.post(url+"/robot/", robot, {headers:{Accept: "application/json"}});
-  //     console.log(response);
-  //     }
-  //     catch(error) {
-  //       console.log(error);
-  //      }
-
-  //   };
 
     const childToParent = (childdata: number) => {
       setStrategy(childdata);
     }
 
     
+  const strategies = async()=>{
+    const url ="https://api.k8s.smarttbot.com/api-front-test/api/v1/";
+    try {
+      const response = await axios.get(url+"/strategy", {headers:{Accept: "application/json"}});
+      setStrategiesList(response.data.data);
+      }
+      catch(error) {
+        console.log(error);
+       }
+    };
 
+    useEffect(()=>{
+      strategies();
+    },[])
     
 
-  const strategies = [
-    {
-      id: 1,
-      name: "Raptor"
-  },
-  {
-      id: 2,
-      name: "Tamgram"
-  },
-  {
-      id: 3,
-      name: "Hórus"
-  },
-  {
-      id: 4,
-      name: "Pontos Pivot"
-  },
-  {
-      id: 5,
-      name: "Orion"
-  },
-  {
-      id: 6,
-      name: "Futuro"
-  },
-  {
-      id: 7,
-      name: "Gauss Contro"
-  }
-  ]
   if (isOpen) {
     return (
       <div className={styles.bg}>
@@ -97,14 +70,12 @@ export default function Modal({ isOpen, children, closeModal, postRobot}: ModalP
             <div className={styles.inputsContainer}>
               <Input inputName="productName" placeholder="Nome do produto" labelText="Nome do produto" onChange={(e : React.FormEvent<HTMLInputElement>)=>{
                 setTitle(e.currentTarget.value);
-                console.log(title);
                 }} />
               <Input inputName="initialCapital" placeholder="R$" labelText="Capital inicial do robô" onChange={(e: React.FormEvent<HTMLInputElement>)=>{
                 setCapital(e.currentTarget.value)
-                console.log(capital);
                 }}/>
             </div>
-            <Strategies childToParent={childToParent} strategiesList={strategies}/>
+            <Strategies childToParent={childToParent} strategiesList={strategiesList}/>
             <div className={styles.buttonsContainer}>
               <Button buttonText="Cancelar" buttonType="cancel" onClick={closeModal}/>
               <Button buttonText="Criar robô" buttonType="create" onClick={(e)=>{
