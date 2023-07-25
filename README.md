@@ -40,3 +40,4 @@ Pronto, agora é possivel acessar a aplicação a partir da rota: https://localh
 ## Próximos passos
 - Refatorar utilizando Redux para gerenciamento de estados
 - Implementar testes unitários com Jest
+- Validação dos campos do formulário
