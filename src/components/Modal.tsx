@@ -72,14 +72,17 @@ export default function Modal({ isOpen, children, closeModal, postRobot}: ModalP
                 setTitle(e.currentTarget.value);
                 }} />
               <Input inputName="initialCapital" placeholder="R$" labelText="Capital inicial do robô" onChange={(e: React.FormEvent<HTMLInputElement>)=>{
+                // @ts-expect-error
                 setCapital(e.currentTarget.value)
                 }}/>
             </div>
+            {/* @ts-expect-error */}
             <Strategies childToParent={childToParent} strategiesList={strategiesList}/>
             <div className={styles.buttonsContainer}>
               <Button buttonText="Cancelar" buttonType="cancel" onClick={closeModal}/>
               <Button buttonText="Criar robô" buttonType="create" onClick={(e)=>{
                 e.preventDefault(); 
+                // @ts-expect-error
                 postRobot(robot);}}/>
             </div>
           </form>

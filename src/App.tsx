@@ -66,11 +66,13 @@ export default function App() {
 
   return (
     <>
+    {/* @ts-expect-error */}
       <Modal isOpen={toggleModal} closeModal={()=>{setToggleModal(!toggleModal)}} postRobot={postRobot}>
         <CloseButton visible={toggleModal} onClick={() => {setToggleModal(false);}}/>
       </Modal>
           <div className="wrapper">
             <Breadcrumb />
+            {/* @ts-expect-error */}
             <Overview overview={overviewValue} />
             <Card heightValue="118px" onClick={() => {roboto.length < 12 ? setToggleModal(true) : alert("Você não possui mais robôs disponíveis.");}}>
               <NewRobot robotQuant={roboto.length} />

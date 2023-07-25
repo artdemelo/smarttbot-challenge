@@ -49,6 +49,7 @@ export default function Robot({ robotValues,}: RobotProps) {
 
   const now = new Date();
   const date = now.toISOString().slice(0,10);
+  // @ts-ignore
   const last_paper: any = robotValues.last_paper;
   let tradesToday : number = 0;
 

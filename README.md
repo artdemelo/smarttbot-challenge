@@ -34,4 +34,9 @@ Pronto, agora é possivel acessar a aplicação a partir da rota: https://localh
 - AXIOS
 - TYPESCRIPT
 - VITE
+  
 ...
+
+## Próximos passos
+- Refatorar utilizando Redux para gerenciamento de estados
+- Implementar testes unitários com Jest

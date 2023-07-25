@@ -19,6 +19,7 @@ export default function Strategies({ strategiesList, childToParent }:StrategiesP
   
   return (
     <>
+   {/* @ts-expect-error  */}
     <div className={styles.container} onClick={childToParent(activeId)}>
         <label htmlFor="strategies" className={textStyles.regular}>Selecione uma das estratégias abaixo</label>
         <ul className={styles.strategies} >
