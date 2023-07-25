@@ -1,27 +1,39 @@
-# React + TypeScript + Vite
+Descrição do projeto 📃
+Projeto desenvolvido no processo seletivo para o Estágio em Front-end da Smarttbot. A aplicação é uma plataforma de gerenciamento de robôs de investimento,
+podendo visualizar diversas informações e, também, criar novos robôs.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Funcionalidades ✔️
+ Cadastro de robôs
+ Listagem de robôs com informações detalhadas
+ Resumo geral das operações feitas
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Deploy da Aplicação 💨
+https://artdemelo.github.io/smarttbot-challenge
 
-## Expanding the ESLint configuration
+...
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Como rodar a aplicação ▶️
+No terminal, clone o projeto:
 
-- Configure the top-level `parserOptions` property like this:
+git clone https://github.com/squad-30/OrangeEvolution-Squad30.git
+Entre na pasta do projeto:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+cd OrangeEvolution-squad30
+Instale as dependências:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+npm install
+Execute a aplicação:
+
+npm run dev
+Pronto, agora é possivel acessar a aplicação a partir da rota: https://localhost:5173/
+
+...
+
+
+Dependencias e tecnologias 💻
+REACT
+AXIOS
+TYPESCRIPT
+VITE
+...
