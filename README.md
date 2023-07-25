@@ -30,8 +30,8 @@ Pronto, agora é possivel acessar a aplicação a partir da rota: https://localh
 
 
 ## Dependencias e tecnologias 💻
-- [REACT]
-- [AXIOS]
-- [TYPESCRIPT]
-- [VITE]
+- REACT
+- AXIOS
+- TYPESCRIPT
+- VITE
 ...
