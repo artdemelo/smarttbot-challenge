@@ -16,10 +16,8 @@ https://artdemelo.github.io/smarttbot-challenge
 ## Como rodar a aplicação ▶️
 No terminal, clone o projeto:
 
-git clone https://github.com/squad-30/OrangeEvolution-Squad30.git
-Entre na pasta do projeto:
+git clone https://github.com/artdemelo/smarttbot-challenge
 
-cd OrangeEvolution-squad30
 Instale as dependências:
 
 npm install
