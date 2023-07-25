@@ -17,8 +17,8 @@ import NewRobot from "./components/NewRobot.tsx";
 export default function App() {
   const [toggleModal, setToggleModal] = useState(false);
   const [roboto, setRoboto] = useState([]);
-  const [robotPaper, setRobotPaper] = useState([]);
   const [overviewValue, setOverviewValue] = useState([]);
+  const [postValue, setPostValue] = useState({});
     
 
   const url ="https://api.k8s.smarttbot.com/api-front-test/api/v1/";
@@ -32,16 +32,6 @@ export default function App() {
         }
       }
   
-  const getRobotPaper = async()=>{
-    try {
-      const response = await axios.get(url+"/robot/paper", {headers:{Accept: "application/json"}});
-
-        setRobotPaper(response.data.data);
-      }
-      catch(error) {
-        console.log(error);
-       }
-    };
   
   const getOverview = async()=>{
     try {
@@ -53,18 +43,37 @@ export default function App() {
         console.log(error);
        }
     };
+
+    const postRobot = async(robotData: object)=>{
+      const url ="https://api.k8s.smarttbot.com/api-front-test/api/v1/";
+      setPostValue(robotData);
+  
+      try {
+        const response = await axios.post(url+"/robot/", postValue, {headers:{Accept: "application/json"}});
+        console.log(response);
+        setToggleModal(!toggleModal)
+        }
+        catch(error) {
+          console.log(error);
+         }
+  
+      };
+
+    const getRobotDataToPost = (data) =>{
+      setPostValue(data);
+    }
   
   
   useEffect(()=>{  
     getRobots();
-    getRobotPaper();
     getOverview();
   },[]);
 
 
+
   return (
     <>
-      <Modal isOpen={toggleModal}>
+      <Modal isOpen={toggleModal} closeModal={()=>{setToggleModal(!toggleModal)}} postRobot={postRobot}>
         <CloseButton visible={toggleModal} onClick={() => {setToggleModal(false);}}/>
       </Modal>
           <div className="wrapper">
@@ -76,7 +85,7 @@ export default function App() {
             <RobotsContainer>
               {roboto && roboto.length > 0 ?
                 roboto.map((robot) => (
-                  <Robot robotValues={robot} robotPaper={robotPaper} />
+                  <Robot robotValues={robot}/>
                   )):"Carregando..."}
             </RobotsContainer>
         </div>

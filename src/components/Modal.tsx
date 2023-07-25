@@ -1,5 +1,6 @@
-import { ReactNode } from "react";
+import { MouseEventHandler, ReactNode, useState } from "react";
 
+import axios from "axios";
 import styles from "./Modal.module.css";
 import textStyles from "./layout/textStyles.module.css";
 
@@ -10,9 +11,46 @@ import Strategies from "./modal/Strategies";
 interface ModalProps {
   isOpen: boolean;
   children: ReactNode;
+  closeModal: MouseEventHandler;
+  post: MouseEventHandler;
+  postRobot: React.FormEventHandler;
 }
 
-export default function Modal({ isOpen, children }: ModalProps) {
+export default function Modal({ isOpen, children, closeModal, postRobot}: ModalProps) {
+  
+  const [title, setTitle] = useState("");
+  const [capital, setCapital] = useState(0);
+  const [strategy, setStrategy] = useState(0);
+  
+  let robot = {
+    title: title, //buscar da caixa de texto titulo
+    mode: 0, //manter em 0
+    strategy_id: strategy, //buscar o id da estratégia selecionada
+    initial_capital: capital, //buscar da caixa de texto de capital
+    simulation: 0, //manter 0
+    broker_id: 1 //manter 1
+  }
+  // const postRobot = async()=>{
+  //   const url ="https://api.k8s.smarttbot.com/api-front-test/api/v1/";
+
+  //   try {
+  //     const response = await axios.post(url+"/robot/", robot, {headers:{Accept: "application/json"}});
+  //     console.log(response);
+  //     }
+  //     catch(error) {
+  //       console.log(error);
+  //      }
+
+  //   };
+
+    const childToParent = (childdata: number) => {
+      setStrategy(childdata);
+    }
+
+    
+
+    
+
   const strategies = [
     {
       id: 1,
@@ -57,13 +95,21 @@ export default function Modal({ isOpen, children }: ModalProps) {
           </div>
           <form className={styles.form}>
             <div className={styles.inputsContainer}>
-              <Input inputName="productName" placeholder="Nome do produto" labelText="Nome do produto" />
-              <Input inputName="initialCapital" placeholder="R$" labelText="Capital inicial do robô" />
+              <Input inputName="productName" placeholder="Nome do produto" labelText="Nome do produto" onChange={(e : React.FormEvent<HTMLInputElement>)=>{
+                setTitle(e.currentTarget.value);
+                console.log(title);
+                }} />
+              <Input inputName="initialCapital" placeholder="R$" labelText="Capital inicial do robô" onChange={(e: React.FormEvent<HTMLInputElement>)=>{
+                setCapital(e.currentTarget.value)
+                console.log(capital);
+                }}/>
             </div>
-            <Strategies strategiesList={strategies} />
+            <Strategies childToParent={childToParent} strategiesList={strategies}/>
             <div className={styles.buttonsContainer}>
-              <Button buttonText="Cancelar" buttonType="cancel"/>
-              <Button buttonText="Criar robô" buttonType="create"/>
+              <Button buttonText="Cancelar" buttonType="cancel" onClick={closeModal}/>
+              <Button buttonText="Criar robô" buttonType="create" onClick={(e)=>{
+                e.preventDefault(); 
+                postRobot(robot);}}/>
             </div>
           </form>
         </div>
