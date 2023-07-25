@@ -1,19 +1,19 @@
-##Descrição do projeto 📃
+## Descrição do projeto 📃
 Projeto desenvolvido no processo seletivo para o Estágio em Front-end da Smarttbot. A aplicação é uma plataforma de gerenciamento de robôs de investimento,
 podendo visualizar diversas informações e, também, criar novos robôs.
 
-##Funcionalidades ✔️
+## Funcionalidades ✔️
  Cadastro de robôs
  Listagem de robôs com informações detalhadas
  Resumo geral das operações feitas
 
 
-##Deploy da Aplicação 💨
+## Deploy da Aplicação 💨
 https://artdemelo.github.io/smarttbot-challenge
 
 ...
 
-##Como rodar a aplicação ▶️
+## Como rodar a aplicação ▶️
 No terminal, clone o projeto:
 
 git clone https://github.com/squad-30/OrangeEvolution-Squad30.git
@@ -31,7 +31,7 @@ Pronto, agora é possivel acessar a aplicação a partir da rota: https://localh
 ...
 
 
-##Dependencias e tecnologias 💻
+## Dependencias e tecnologias 💻
 REACT
 AXIOS
 TYPESCRIPT
